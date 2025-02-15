@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>the ps70 trail</title>
+    <link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html,
+      body,
+      pre,
+      code,
+      kbd,
+      samp {
+        font-family: "Press Start 2P";
+      }
+    </style>
+    <style>
+      body {
+        background-color: #000;
+        color: #fff;
+        font-family: "Press Start 2P", cursive;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-around;
+        padding: 1rem;
+        background-color: #333;
+        border: none;
+        margin: 1rem;
+      }
+      .navbar a {
+        color: white;
+        text-decoration: none;
+      }
+      .content {
+        padding: 2rem;
+        font-family: "Roboto", sans-serif;
+      }
+      .content ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      .content ul li {
+        margin: 0.5rem 0;
+        display: flex;
+        align-items: center;
+      }
+      .content ul li a {
+        color: #00ff00;
+        text-decoration: none;
+        margin-left: 0.5rem;
+      }
+      .content ul li a:hover {
+        text-decoration: underline;
+      }
+      .nes-container {
+        background-color: #000;
+        border-color: #fff;
+        margin-top: 1.5rem;
+        padding: 1rem;
+      }
+      .nes-icon.triangle {
+        color: #00ff00;
+      }
+      .image-container {
+        text-align: center;
+        margin: 2rem 0;
+      }
+      .image-container img {
+        max-width: 50%;
+        height: auto;
+      }
+      .image-container-border {
+        text-align: center;
+        margin: 2rem 0;
+        border: 1px solid #fff;
+        padding: 1rem;
+      }
+      .image-container-border img {
+        max-width: 50%;
+        height: auto;
+      }
+      .title {
+        text-align: center;
+        margin: 2rem 0;
+      }
+      .title a {
+        color: #fff;
+      }
+      .title a:hover {
+        text-decoration: underline;
+      }
+      .nes-btn {
+        color: #000 !important;
+        background-color: #fff;
+      }
+      .progress {
+        margin: 1rem;
+      }
+      .grass {
+        width: 100%;
+        height: 80px;
+        background-color: #00ff00;
+        margin-top: -30px;
+      }
+      .table {
+        align-content: center;
+      }
+      .td {
+        text-align: center;
+      }
+      .media-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin: 2rem 0;
+      }
+      .media-container img,
+      .media-container .gif {
+        max-width: 40vw; /* Limits width to 40% of the viewport */
+        height: auto; /* Maintains aspect ratio */
+        max-height: 50vh; /* Prevents it from taking over too much screen space */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title">
+      <a href="../index.html"><h1>the ps70 trail</h1></a>
+    </div>
+    <div class="navbar nes-container is-rounded">
+      <a class="nes-btn" href="../about/about.html">about me</a>
+      <a class="nes-btn" href="../final_project/final_project.html"
+        >final project</a
+      >
+    </div>
+    <div class="image-container">
+      <img src="../oregontrail_wagon.png" alt="oregon trail wagon" />
+    </div>
+    <div class="grass"></div>
+    <div class="title">
+      <h1>Week 2: 2D Design and Cutting</h1>
+    </div>
+    <div class="content">
+      <p>
+        This week was an intro to laser cutting and a bit of fusion. I've laser
+        cut a couple times before, but this was my first time crafting something
+        without strict guidance.
+      </p>
+      <h2>Main Assignment: Cardboard Box</h2>
+      <div class="media-container">
+        <img src="finished_box_sq.jpg" alt="finished_box_sq" />
+        <img src="gamecube_real.jpg" alt="gamecube_real" />
+      </div>
+      <p>
+        The major assignment was creating a box to hold our materials for the
+        rest of the semester, and in thinking about how to stay on my game
+        theme, I chose to make my box a gamecube! The gamecube is just a little
+        bit before my time, but I did play Mario Kart DoubleDash so I think I'm
+        valid.
+      </p>
+      <h3>Design</h3>
+      <p>
+        Because I like seeing things fully assembled, I opted to 3d model the
+        box by each side in Fusion, and then transform that into a 2D sketch I
+        could laser cut. So, after some extrusions, some patterning, and a few
+        rotational joints later, I had my unfolded box.
+      </p>
+      <div class="media-container">
+        <img
+          src="cardboard_box_3d_model_base.png"
+          alt="cardboard_box_3d_model"
+        />
+        <img
+          src="cardboard_box_3d_unfolded.png"
+          alt="cardboard_box_3d_unfolded"
+        />
+      </div>
+      <p>
+        Five big booms to Kassia for showing us how the Project tool in Fusion
+        works. After using it during lab to model our useless box, I decided
+        that's how I'd laser cut my box. I projected all of the components onto
+        one of the origin planes and then continued to sketch up some extra
+        decorations, leading to this nice final sketch below. All that's left is
+        to cut and assemble.
+      </p>
+      <div class="media-container">
+        <img
+          src="cardboard_box_final_sketch.png"
+          alt="cardboard_box_final_sketch"
+        />
+      </div>
+      <h3>Laser Cutting and Assembly</h3>
+      <p>
+        I had a few worries initially about cutting the sides, since I had a lot
+        of small squares I wanted to fully cut out. And surely enough, those
+        worries came to fruition. A small fire did start (look towards the top
+        of the right pic), but I put it out quickly and decided I needed a new
+        plan. So, instead, I decided to score the squares as a little design. I
+        probably could've then cut them out with an x-acto knife, but I didn't
+        have the activation energy. Another approach suggested was to do the cut
+        on lower power and do a couple of passes, but honestly I was getting
+        close to the deadline. If I have some spare time, maybe I'll do that and
+        replace the sides. Otherwise, cutting went pretty smoothly, kerf
+        thankfully wasn't a problem, and the folding hinges I used to make the
+        handle and foldable top worked suprisingly well.
+      </p>
+      <div class="media-container">
+        <img src="laser_cutting.jpg" alt="lasering" />
+        <img src="cut_pieces.jpg" alt="board lights" />
+      </div>
+      <p>
+        I'm honestly pretty satisfied with the result! I think it would be
+        pretty cool to add a cardboard controller along side it, but yeah, time
+        and all that.
+      </p>
+      <div class="media-container">
+        <img src="finished_box_front_view.jpg" alt="box_front_view" />
+        <img src="finished_box_back_view.jpg" alt="box_back_view" />
+      </div>
+      <h2>Additonal Exercises</h2>
+      <h3>Tutorial: Surfaces</h3>
+      <p>
+        For one of the additional exercises, we were supposed to follow some
+        tutorial on Fusion or another CAD program of choice. I hadn't used the
+        Surfaces tool before, so I found <a href "https://www.youtube.com/watch?v=EzJMWLX0IbU">this neat tutorial </a>
+        and ended up with a nice looking propellor after some easy-to-follow along steps.
+      </p>
+      <div class="media-container">
+        <img src="fusion_surfaces_tutorial_propeller.png" alt="propellor cad" />
+      </div>
+      <h3>Modeling Random Things</h3>
+      <p>
+        The other exercise was two find two things to model in Fusion. I ended
+        up going for an LED (EECS major, one of the best debuggers aside from an
+        oscilloscope) and a domino tile. Those can be seen down below, and so
+        can the files from everything this week.
+      </p>
+      <div class="media-container">
+        <img src="led.png" alt="led cad" />
+        <img src="domino.png" alt="domino tile cad" />
+      </div>
+    </div>
+  </body>
+</html>
