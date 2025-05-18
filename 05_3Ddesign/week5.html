@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>the ps70 trail</title>
+    <link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html,
+      body,
+      pre,
+      code,
+      kbd,
+      samp {
+        font-family: "Press Start 2P";
+      }
+    </style>
+    <style>
+      body {
+        background-color: #000;
+        color: #fff;
+        font-family: "Press Start 2P", cursive;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-around;
+        padding: 1rem;
+        background-color: #333;
+        border: none;
+        margin: 1rem;
+      }
+      .navbar a {
+        color: white;
+        text-decoration: none;
+      }
+      .content {
+        padding: 2rem;
+        font-family: "Roboto", sans-serif;
+      }
+      .content ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      .content ul li {
+        margin: 0.5rem 0;
+        display: flex;
+        align-items: center;
+      }
+      .content ul li a {
+        color: #00ff00;
+        text-decoration: none;
+        margin-left: 0.5rem;
+      }
+      .content ul li a:hover {
+        text-decoration: underline;
+      }
+      .nes-container {
+        background-color: #000;
+        border-color: #fff;
+        margin-top: 1.5rem;
+        padding: 1rem;
+      }
+      .nes-icon.triangle {
+        color: #00ff00;
+      }
+      .image-container {
+        text-align: center;
+        margin: 2rem 0;
+      }
+      .image-container img {
+        max-width: 50%;
+        height: auto;
+      }
+      .image-container-border {
+        text-align: center;
+        margin: 2rem 0;
+        border: 1px solid #fff;
+        padding: 1rem;
+      }
+      .image-container-border img {
+        max-width: 50%;
+        height: auto;
+      }
+      .title {
+        text-align: center;
+        margin: 2rem 0;
+      }
+      .title a {
+        color: #fff;
+      }
+      .title a:hover {
+        text-decoration: underline;
+      }
+      .nes-btn {
+        color: #000 !important;
+        background-color: #fff;
+      }
+      .progress {
+        margin: 1rem;
+      }
+      .grass {
+        width: 100%;
+        height: 80px;
+        background-color: #00ff00;
+        margin-top: -30px;
+      }
+      .table {
+        align-content: center;
+      }
+      .td {
+        text-align: center;
+      }
+      .media-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin: 2rem 0;
+      }
+      .media-container img,
+      .media-container .gif {
+        max-width: 40vw; /* Limits width to 40% of the viewport */
+        height: auto; /* Maintains aspect ratio */
+        max-height: 50vh; /* Prevents it from taking over too much screen space */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title">
+      <a href="../index.html"><h1>the ps70 trail</h1></a>
+    </div>
+    <div class="navbar nes-container is-rounded">
+      <a class="nes-btn" href="../about/about.html">about me</a>
+      <a class="nes-btn" href="../final_project/final_project.html"
+        >final project</a
+      >
+    </div>
+    <div class="image-container">
+      <img src="../oregontrail_wagon.png" alt="oregon trail wagon" />
+    </div>
+    <div class="grass"></div>
+    <div class="title">
+      <h1>Week 5: 3D Design and Printing</h1>
+    </div>
+    <div class="content">
+      <p>
+        And the moment we've all been waiting for, 3D printing! Having this
+        under my belt definitely helped with progress towards the final project,
+        and even assignments in other classes.
+      </p>
+      <h2>Main Assignment: Design and Print Something</h2>
+      <div class="media-container">
+        <img src="stevenson.jpg" alt="stevenson" />
+        <img src="box and shield bed.jpg" alt="prusa preview" />
+      </div>
+      <p>
+        So I actually ended up using this assignment to work on something useful
+        for another one of my classes. For
+        <a href="https://efi.mit.edu/spring25/information/">MIT's 6.900</a>, we
+        have a final project where we need to create a set of small, remote,
+        weather monitoring systems to be placed across campus and accurately
+        measure temperature and humidity. Last year's class used a solid box to
+        house everything, and they saw errors in measurements around midday,
+        when temperatures were at their highest. We decided it would be a good
+        idea to iterate over the design, and allow for airflow so the box
+        doesn't hold so much heat.
+        <br />
+        <br />
+        This led me to design a Stevenson shield box with vents to house the
+        sensors. I definitely think I had the right idea, but I put myself into
+        a lot of struggle with how I chose to do supports. In my naivety, I left
+        supports everywhere, and since I had hollowed out some of the walls of
+        the box with my vent creation, those supports were almost impossible to
+        remove. We ended up changing our design anyways to make a smaller
+        cone-like radiation shield for the sensors. I also 3d printed a basic,
+        solid box to mimic the previous year's design, and used that for testing
+        the effectiveness of our new shield (airflow was infact good).
+      </p>
+      <div class="media-container">
+        <img src="heat test.jpg" alt="heat test" />
+      </div>
+      <h2>Photogrammetry/LIDAR</h2>
+      <p>
+        I used the Polycam app to create a 3D model of the first interesting
+        looking object I could find in lab, and that was a small box of corn
+        starch. To do the scan, I setup the corn starch in the PS70 filming
+        booth, which has good lighting that prevents unwanted shadows. I then
+        used the auto function in the app on my phone to continuously take
+        pictures of the object and rotated around it. After only a minute, I had
+        come up with the
+        <a href="https://poly.cam/capture/7A96D44A-2494-4CCC-99BC-556BDF5DCAFC"
+          >model</a
+        >
+        below. I've provided a picture of the setup for reference too. I was
+        wary about going all the way around the object because I might just not
+        even capture it my lens, so the backside isn't rendered very well.
+        Otherwise, it came out pretty well, even capturing the text.
+      </p>
+      <div class="media-container">
+        <img src="actual_photo.jpg" alt="actual" />
+        <img src="3d_scan.jpg" alt="scan" />
+      </div>
+      <h3>Files</h3>
+      <h4>Fusion 360 Files</h4>
+      <p>
+        <a href="stevenson_box_v1.f3d">Stevenson Box</a>
+        <br />
+        <a href="no_stevenson_box_v1.f3d">Basic Box</a>
+      </p>
+      <h4>STL Files</h4>
+      <p>
+        <a href="stevensonBody.stl">Stevenson Box Body</a>
+        <br />
+        <a href="stevensonLid.stl">Stevenson Box Lid</a>
+        <br />
+        <a href="basicBox.stl">Basic Box Body</a>
+        <br />
+        <a href="basicLid.stl">Basic Box Lid</a>
+      </p>
+      <h4>G-Code</h4>
+      <p>
+        <a href="allboxes_0.15mm_PLA_MK3S_16h16m.gcode"
+          >G-Code for both boxes</a
+        >
+        <br />
+      </p>
+      <h4>Scanning</h4>
+      <p>
+        <a href="https://poly.cam/capture/7A96D44A-2494-4CCC-99BC-556BDF5DCAFC"
+          >Corn Starch 3D Model</a
+        >
+        <br />
+      </p>
+    </div>
+  </body>
+</html>

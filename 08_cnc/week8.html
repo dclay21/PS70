@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>the ps70 trail</title>
+    <link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html,
+      body,
+      pre,
+      code,
+      kbd,
+      samp {
+        font-family: "Press Start 2P";
+      }
+    </style>
+    <style>
+      body {
+        background-color: #000;
+        color: #fff;
+        font-family: "Press Start 2P", cursive;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-around;
+        padding: 1rem;
+        background-color: #333;
+        border: none;
+        margin: 1rem;
+      }
+      .navbar a {
+        color: white;
+        text-decoration: none;
+      }
+      .content {
+        padding: 2rem;
+        font-family: "Roboto", sans-serif;
+      }
+      .content ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      .content ul li {
+        margin: 0.5rem 0;
+        display: flex;
+        align-items: center;
+      }
+      .content ul li a {
+        color: #00ff00;
+        text-decoration: none;
+        margin-left: 0.5rem;
+      }
+      .content ul li a:hover {
+        text-decoration: underline;
+      }
+      .nes-container {
+        background-color: #000;
+        border-color: #fff;
+        margin-top: 1.5rem;
+        padding: 1rem;
+      }
+      .nes-icon.triangle {
+        color: #00ff00;
+      }
+      .image-container {
+        text-align: center;
+        margin: 2rem 0;
+      }
+      .image-container img {
+        max-width: 50%;
+        height: auto;
+      }
+      .image-container-border {
+        text-align: center;
+        margin: 2rem 0;
+        border: 1px solid #fff;
+        padding: 1rem;
+      }
+      .image-container-border img {
+        max-width: 50%;
+        height: auto;
+      }
+      .title {
+        text-align: center;
+        margin: 2rem 0;
+      }
+      .title a {
+        color: #fff;
+      }
+      .title a:hover {
+        text-decoration: underline;
+      }
+      .nes-btn {
+        color: #000 !important;
+        background-color: #fff;
+      }
+      .progress {
+        margin: 1rem;
+      }
+      .grass {
+        width: 100%;
+        height: 80px;
+        background-color: #00ff00;
+        margin-top: -30px;
+      }
+      .table {
+        align-content: center;
+      }
+      .td {
+        text-align: center;
+      }
+      .media-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin: 2rem 0;
+      }
+      .media-container img,
+      .media-container .gif {
+        max-width: 40vw; /* Limits width to 40% of the viewport */
+        height: auto; /* Maintains aspect ratio */
+        max-height: 50vh; /* Prevents it from taking over too much screen space */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title">
+      <a href="../index.html"><h1>the ps70 trail</h1></a>
+    </div>
+    <div class="navbar nes-container is-rounded">
+      <a class="nes-btn" href="../about/about.html">about me</a>
+      <a class="nes-btn" href="../final_project/final_project.html"
+        >final project</a
+      >
+    </div>
+    <div class="image-container">
+      <img src="../oregontrail_wagon.png" alt="oregon trail wagon" />
+    </div>
+    <div class="grass"></div>
+    <div class="title">
+      <h1>Week 8: CNC Milling</h1>
+    </div>
+    <div class="content">
+      <p>
+        This week was about manufacturing processes using the CNC mill and
+        molding + casting techniques. The task was to first mill something, then
+        post-process it with one of the techniques we learned about.
+      </p>
+      <h2>CNC Mill</h2>
+      <div class="media-container">
+        <img src="cnc_tile.jpg" alt="cnc tile" />
+        <img src="cad_tile.png" alt="cad tile" />
+      </div>
+      <p>
+        Since I ended up choosing my MBTA tracker idea for my final project, I
+        wanted to honor my other project idea and CNC a catan tile. Back in Week
+        6, we prepared our CAD files for milling. I used Fusion 360 to create a
+        3D model of a wheat tile, using published known dimensions. My original
+        design ended up not having enough spacing between some lines, so I had
+        to reduce the amount of wheat on my design and make things larger. The
+        final design is shown above.
+        <br />
+        <br />
+        The file needed for the ShopBot was a .dxf file, so I exported the
+        design as a 2D drawing and saved it as a .dxf. When Bobby was helping me
+        using the machine, we found out there were a bunch of open vectors,
+        which was a result of sketch geometries being duplicated. I ended up
+        having to go back into Fusion, do some careful projecting, and then
+        re-export the file. The result ended up being pretty clean and only took
+        about 15 minutes to mill.
+      </p>
+      <h2>Post-Processing!</h2>
+      <p>
+        For post-processing, I chose to vacuum form the tile. I used the small
+        Micro-Mark vacuum former, which just barely fit the tile. Snapped a
+        piece of plastic on that bad boy, let it heat up, and then hit the
+        vacuum. The resulting mold was decent, but due to the tile's size and
+        sharpness, the plastic didn't fully form around the edges. It was also a
+        pain to remove from the mold, and some wood ended up getting stuck in
+        the plastic as you can see below.
+      </p>
+      <div class="media-container">
+        <img src="vacuum_form.jpg" alt="vacuum" />
+        <img src="tile_and_mold.jpg" alt="mold" />
+      </div>
+      <p>
+        I then poured some plaster into the mold and let it set. It look pretty
+        decent, while in the mold. Then, I tried to remove it. It started to
+        crack and break, and eventually I gave up keeping it together. The
+        result was a bunch of pieces of plaster that I didn't want to play
+        puzzle with to glue back together. If I have some more time, I'll look
+        into redoing the mold and casting.
+      </p>
+      <div class="media-container">
+        <img src="broken_tile.jpg" alt="broken" />
+      </div>
+      <h3>Files</h3>
+      <p>
+        <a href="catan_wheat_tile_v1 v2.f3d">Catan Tile Fusion File</a>
+        <br />
+        <a href="tile_sketch_for_mill.dxf">DXF File for Milling</a>
+      </p>
+    </div>
+  </body>
+</html>

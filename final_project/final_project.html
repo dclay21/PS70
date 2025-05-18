@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>the ps70 trail</title>
+    <link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html,
+      body,
+      pre,
+      code,
+      kbd,
+      samp {
+        font-family: "Press Start 2P";
+      }
+    </style>
+    <style>
+      body {
+        background-color: #000;
+        color: #fff;
+        font-family: "Press Start 2P", cursive;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-around;
+        padding: 1rem;
+        background-color: #333;
+        border: none;
+        margin: 1rem;
+      }
+      .navbar a {
+        color: white;
+        text-decoration: none;
+      }
+      .content {
+        padding: 2rem;
+        font-family: "Roboto", sans-serif;
+      }
+      .content ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      .content ul li {
+        margin: 0.5rem 0;
+        display: flex;
+        align-items: center;
+      }
+      .content ul li a {
+        color: #00ff00;
+        text-decoration: none;
+        margin-left: 0.5rem;
+      }
+      .content ul li a:hover {
+        text-decoration: underline;
+      }
+      .nes-container {
+        background-color: #000;
+        border-color: #fff;
+        margin-top: 1.5rem;
+        padding: 1rem;
+      }
+      .nes-icon.triangle {
+        color: #00ff00;
+      }
+      .image-container {
+        text-align: center;
+        margin: 2rem 0;
+      }
+      .image-container img {
+        max-width: 50%;
+        height: auto;
+      }
+      .image-container-border {
+        text-align: center;
+        margin: 2rem 0;
+        border: 1px solid #fff;
+        padding: 1rem;
+      }
+      .image-container-border img {
+        max-width: 50%;
+        height: auto;
+      }
+      .title {
+        text-align: center;
+        margin: 2rem 0;
+      }
+      .title a {
+        color: #fff;
+      }
+      .title a:hover {
+        text-decoration: underline;
+      }
+      .nes-btn {
+        color: #000 !important;
+        background-color: #fff;
+      }
+      .progress {
+        margin: 1rem;
+      }
+      .grass {
+        width: 100%;
+        height: 80px;
+        background-color: #00ff00;
+        margin-top: -30px;
+      }
+      .table {
+        align-content: center;
+      }
+      .td {
+        text-align: center;
+      }
+      .media-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin: 2rem 0;
+      }
+      .media-container img,
+      .media-container .gif {
+        max-width: 45%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title">
+      <a href="../index.html"><h1>the ps70 trail</h1></a>
+    </div>
+    <div class="navbar nes-container is-rounded">
+      <a class="nes-btn" href="../about/about.html">about me</a>
+      <a class="nes-btn" href="../final_project/final_project.html"
+        >final project</a
+      >
+    </div>
+    <div class="image-container">
+      <img src="../oregontrail_wagon.png" alt="oregon trail wagon" />
+    </div>
+    <div class="grass"></div>
+    <div class="title">
+      <h1>Final Project</h1>
+    </div>
+    <div class="content">
+      <p>
+        The main assignment for this week is to start this website and come up
+        with some project ideas. So here's two of my current ideas.
+      </p>
+      <h2>Idea 1: Train Tracker Decoration</h2>
+      <div class="media-container">
+        <!-- <img src="city_map.jpg" alt="laser cut city map" /> -->
+        <img class="gif" src="mbta9_animated2.gif" alt="train tracker gif" />
+      </div>
+      <p>
+        Going from a state where I've always needed a car to cities with public
+        transporation has made me a big subway advocate. This first project idea
+        is replicating the train tracker from the gif, while placing inside a 3d
+        modeled or laser cut city map to make it look more aesthetic as a wall
+        decoration. The train tracker would pull subway data live from the MBTA
+        api and display it on the map via LEDs. I'm trying to envision a
+        different way of indicating direction that's not just two separate
+        tracks for each line, but it's still a work in progress.
+      </p>
+      <h2>Idea 2: Custom Catan Board (w/electronics)</h2>
+      <div class="media-container">
+        <img src="laser_cut_catan_tiles.jpeg" alt="laser cut tiles" />
+        <img src="catan_board_lights.jpg" alt="board lights" />
+      </div>
+      <p>
+        So I played Catan for the first time during my sophomore year of
+        college, and it was wraps from there. If someone proposes a game in my
+        vicinity, I will play without hesitation. Moving on, I thought it would
+        be pretty cool to make my own custom board and incorporate some
+        electronics. I've seen examples of boards where people laser cut or 3d
+        print their own pieces, and I'd also like to do that, making my own
+        designs for the different resources tiles, the water borders, game
+        pieces, etc. I've seen some boards that are electronic as well, having
+        an automatic dice roller programmed by a microcontroller, which then
+        lights up the correct tiles on the board that correspond to the roll so
+        people collect their resources. However, those boards aren't usually
+        modular and can't be packed up very easily. My goal is to make a board
+        that can do both of those things. I don't want to do virtual dice, since
+        I feel the whole rolling dice thing really adds to the board game
+        aspect, so I want to make a dice box or cage to roll the dice in. From
+        there, a camera + microcontroller processes the roll, either by some CV
+        techniques or color/pattern recognition, and then it's time for the
+        lighting. The difficulty here is trying to keep the setup modular. I
+        could mimic how nanoleaf tiles connect (see below) for circuitry, or I
+        could look for a different solution. 
+       </p>
+       <div class="media-container">
+        <img src="nanoleaf.jpg" alt="nanoleaf tiles" />
+       </div>
+      <p>One of my other alternatives is to
+        have the lights be on the number tiles themselves (the ones you can
+        place on any tile and signal resource collection for dice), and do something where the microcontroller broadcasts a frequency unique to each number, and some circuit there will pick up the signal and switch the light on if it's the right number. I'm not sure how feasible that is, but it's an idea. </p>
+      </p>
+    </div>
+    <!-- <tr style="height: 3.5rem">
+          <td class="td">name:</td>
+          <td class="td">donavon clay</td>
+        </tr>
+        <tr style="height: 3.5rem">
+          <td class="td">class year:</td>
+          <td class="td">2025</td>
+        </tr>
+        <tr style="height: 3.5rem">
+          <td class="td">major:</td>
+          <td class="td">electrical engineering & computer science</td>
+        </tr>
+        <tr style="height: 3.5rem">
+          <td class="td">hometown:</td>
+          <td class="td">san antonio, tx</td>
+        </tr>
+        <tr style="height: 3.5rem">
+          <td class="td">likes:</td>
+          <td class="td">
+            video games, volleyball, strawberry smoothies, public transit
+          </td>
+        </tr>
+      </table> -->
+    <!-- </div> -->
+    <!-- <div class="image-container-border">
+      <img src="../marshmallow_me.JPG" alt="marshmallow_me_pic" />
+    </div>
+    <div class="nes-container is-rounded">
+      <p>
+        hey! my name's donavon and i'm a current senior at MIT. when i first got
+        to college, i was excited by the number of resources available to me,
+        like the makerspaces. i then proceeded to simply not do that and got too
+        preoccupied with classes and internships. oops.
+      </p>
+      <p>
+        i've still enjoyed my time here though! and i've definitely able to do
+        some cool things and meet amazing people. anyways, we're doing one last
+        hoorah here and having fun while learning how to make some cool things.
+        i've got a few different ideas for some of the weekly projects and for
+        the final project, so i'm looking forward to implementing them.
+      </p>
+      <p>
+        other things about me include that i'm a military kid, so i moved around
+        a lot growing up, most interesting being germany. i grew up playing
+        basketball and soccer, though i play more volleyball now.
+      </p>
+    </div> -->
+  </body>
+</html>

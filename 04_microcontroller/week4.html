@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>the ps70 trail</title>
+    <link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html,
+      body,
+      pre,
+      code,
+      kbd,
+      samp {
+        font-family: "Press Start 2P";
+      }
+    </style>
+    <style>
+      body {
+        background-color: #000;
+        color: #fff;
+        font-family: "Press Start 2P", cursive;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-around;
+        padding: 1rem;
+        background-color: #333;
+        border: none;
+        margin: 1rem;
+      }
+      .navbar a {
+        color: white;
+        text-decoration: none;
+      }
+      .content {
+        padding: 2rem;
+        font-family: "Roboto", sans-serif;
+      }
+      .content ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      .content ul li {
+        margin: 0.5rem 0;
+        display: flex;
+        align-items: center;
+      }
+      .content ul li a {
+        color: #00ff00;
+        text-decoration: none;
+        margin-left: 0.5rem;
+      }
+      .content ul li a:hover {
+        text-decoration: underline;
+      }
+      .nes-container {
+        background-color: #000;
+        border-color: #fff;
+        margin-top: 1.5rem;
+        padding: 1rem;
+      }
+      .nes-icon.triangle {
+        color: #00ff00;
+      }
+      .image-container {
+        text-align: center;
+        margin: 2rem 0;
+      }
+      .image-container img {
+        max-width: 50%;
+        height: auto;
+      }
+      .image-container-border {
+        text-align: center;
+        margin: 2rem 0;
+        border: 1px solid #fff;
+        padding: 1rem;
+      }
+      .image-container-border img {
+        max-width: 50%;
+        height: auto;
+      }
+      .title {
+        text-align: center;
+        margin: 2rem 0;
+      }
+      .title a {
+        color: #fff;
+      }
+      .title a:hover {
+        text-decoration: underline;
+      }
+      .nes-btn {
+        color: #000 !important;
+        background-color: #fff;
+      }
+      .progress {
+        margin: 1rem;
+      }
+      .grass {
+        width: 100%;
+        height: 80px;
+        background-color: #00ff00;
+        margin-top: -30px;
+      }
+      .table {
+        align-content: center;
+      }
+      .td {
+        text-align: center;
+      }
+      .media-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin: 2rem 0;
+      }
+      .media-container img,
+      .media-container .gif {
+        max-width: 40vw; /* Limits width to 40% of the viewport */
+        height: auto; /* Maintains aspect ratio */
+        max-height: 50vh; /* Prevents it from taking over too much screen space */
+      }
+      .plain-code {
+        font-family: Menlo, Consolas, monospace;
+        font-size: 1rem;
+        line-height: 1.4;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title">
+      <a href="../index.html"><h1>the ps70 trail</h1></a>
+    </div>
+    <div class="navbar nes-container is-rounded">
+      <a class="nes-btn" href="../about/about.html">about me</a>
+      <a class="nes-btn" href="../final_project/final_project.html"
+        >final project</a
+      >
+    </div>
+    <div class="image-container">
+      <img src="../oregontrail_wagon.png" alt="oregon trail wagon" />
+    </div>
+    <div class="grass"></div>
+    <div class="title">
+      <h1>Week 4: Microcontroller Programming</h1>
+    </div>
+    <div class="content">
+      <p>
+        This week was about getting familiar with microcontrollers and
+        programming in C++ through Arduino. For my assignment this week, I chose
+        to experiment with using HC-05 Bluetooth modules, since I am planning to
+        use them in a final project for my other class on microcomputers.
+      </p>
+      <!-- <h2>Main Assignment: Cardboard Box</h2> -->
+      <div class="media-container">
+        <img src="hc05_circuit.jpg" alt="hc05_circuit" />
+        <img src="hc051.jpg" alt="hc05_pinout" />
+      </div>
+      <p>
+        The HC-05's provide a serial connection over Bluetooth, which is great
+        for sending data between two devices. I setup two ESP32C3 boards, each
+        with a button and LED. When the button is pressed on one board, it sends
+        a signal to the other board to turn on its LED. In order to setup the
+        communication, I had to configure the HC-05 modules, one as a controller
+        and one as a peripheral. To do this, you have to use AT commands to set
+        the modules to the correct mode and to find each other. For the
+        peripheral, it was as simple as sending an "AT+ADDR?" command to get its
+        MAC address. Then, for the controller, I had to set its role to a
+        controller ("AT+ROLE=1"), the connection mode to master ("AT+CMODE=0"),
+        and then set the MAC address of the peripheral
+        ("AT+BIND=0025,00,0011DF"). After that, I was able to connect to the
+        peripheral and send data. The configuration code for the controller is
+        below.
+      </p>
+      <pre class="plain-code">
+        void configureHC05() {
+          delay(500);
+          Serial.println("Entering AT mode...");
+          btSerialController.print("AT\r\n");
+          delay(500); readResponse();
+        
+          Serial.println("Set role = Master");
+          btSerialController.print("AT+ROLE=1\r\n");
+          delay(500); readResponse();
+        
+          Serial.println("Set connection mode = fixed address");
+          btSerialController.print("AT+CMODE=0\r\n");
+          delay(500); readResponse();
+        
+          Serial.println("Bind to target address");
+          btSerialController.print("AT+BIND=0025,00,0011DF\r\n");
+          delay(500); readResponse();
+        
+          Serial.println("Initialize SPP");
+          btSerialController.print("AT+INIT\r\n");
+          delay(500); readResponse();
+        
+          Serial.println("Link to target");
+          btSerialController.print("AT+LINK=0025,00,0011DF\r\n");
+          delay(500); readResponse();
+        
+          Serial.println("HC-05 configured.");
+        }
+      </pre>
+      <div class="media-container">
+        <img class="gif" src="vid.gif" alt="system gif" />
+      </div>
+      <p>
+        The system in action can be seen (blurry) in the gif above, and the code
+        for the system is linked below. Something I always end up forgetting
+        during wiring that caused me a teeny bit of trouble was that the TX and
+        RX pins are swapped between the two boards. So, the TX pin of the HC05
+        should be connected to the RX pin defined in the ESP's software, and
+        vice versa.
+      </p>
+      <p>
+        <a href="hc05_controller.zip">HC-05 Controller Code</a>
+        <br />
+        <a href="hc_05_peripheral_setup.zip"
+          >HC-05 Peripheral Setup (reading MAC Address)</a
+        >
+        <br />
+        <a href="hc05_peripheral.zip">HC-05 Peripheral Code</a>
+        <br />
+      </p>
+    </div>
+  </body>
+</html>
